@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
         let colors = ['blue', 'green', 'teal'];
         let randomColor = colors[Math.floor(Math.random() * colors.length)];
         for (i = 0; i < colors.length; i++) {
-            h1.style.color = randomColor;
+            h1.style.color = colors.randomColor;
         }
             
     }
