@@ -48,17 +48,40 @@ document.addEventListener("DOMContentLoaded", function() {
     document.body.appendChild(h6); 
     
 
-h1.addEventListener('click', changeColor);
-h2.addEventListener('click', changeColor);
-h3.addEventListener('click', changeColor);
-h4.addEventListener('click', changeColor);
-h5.addEventListener('click', changeColor);
-h6.addEventListener('click', changeColor);
+    h1.addEventListener('dblclick', changeColor);
+    h2.addEventListener('dblclick', changeColor);
+    h3.addEventListener('dblclick', changeColor);
+    h4.addEventListener('dblclick', changeColor);
+    h5.addEventListener('dblclick', changeColor);
+    h6.addEventListener('dblclick', changeColor);
 
-function changeColor(e) {
-    let colors = ['blue', 'teal', 'turquoise', 'light green', 'lime', 'yellow', 'orange', 'sea foam'];
-    let newColor = colors[Math.floor(Math.random() * colors.length)];
-    e.target.style.color = newColor;
-};
+    function changeColor(e) {
+        let colors = ['blue', 'teal', 'turquoise', 'light green', 'lime', 'yellow', 'orange', 'sea foam'];
+        let newColor = colors[Math.floor(Math.random() * colors.length)];
+        e.target.style.color = newColor;
+    };
+
+    let button = document.querySelector('button');
+    document.body.appendChild(button);
+    button.className = 'button';
+
+    button.addEventListener('click', insertItem);
+
+    function insertItem() {
+        console.log('worked');
+        let list = document.createElement('ul');
+        let item = document.createElement('li');
+        let text = document.createTextNode('This is list item ' + [i]);
+        
+        item.appendChild(text);
+        list.appendChild(item);
+        document.body.appendChild(list);
+    
+        for (var i = 1; i <= 6; ++i) {
+            item[i].innerHTML = ('This is list item ' + [i]);
+        //    document.querySelector('item')[i].innerText = 'This is list item ' + [i];
+        } 
+    }
+
 
 })

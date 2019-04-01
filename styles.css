@@ -26,3 +26,8 @@ h5 {
 h6 {
     color: plum;
 }
+
+.list {
+    color: gray;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
