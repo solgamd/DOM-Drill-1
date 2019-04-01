@@ -5,10 +5,12 @@ document.addEventListener("DOMContentLoaded", function() {
     let h1 = document.createElement('h1');
     let hOneText = document.createTextNode("This is an h1");
     h1.className = 'h1';
+
     
     h1.appendChild(hOneText);
     document.body.appendChild(h1);
     document.body.appendChild(header);
+
 
     let h2 = document.createElement('h2');
     let hTwoText = document.createTextNode('This is an h2');
@@ -43,20 +45,20 @@ document.addEventListener("DOMContentLoaded", function() {
     h6.className = 'h6';
 
     h6.appendChild(hSixText);
-    document.body.appendChild(h6);
-
-    window.addEventListener("click", hClicked()); 
+    document.body.appendChild(h6); 
     
-    function hClicked() {
-        let colors = ['blue', 'green', 'teal'];
-        let randomColor = colors[Math.floor(Math.random() * colors.length)];
-        for (i = 0; i < colors.length; i++) {
-            h1.style.color = colors.randomColor;
-        }
-            
-    }
 
+h1.addEventListener('click', changeColor);
+h2.addEventListener('click', changeColor);
+h3.addEventListener('click', changeColor);
+h4.addEventListener('click', changeColor);
+h5.addEventListener('click', changeColor);
+h6.addEventListener('click', changeColor);
+
+function changeColor(e) {
+    let colors = ['blue', 'teal', 'turquoise', 'light green', 'lime', 'yellow', 'orange', 'sea foam'];
+    let newColor = colors[Math.floor(Math.random() * colors.length)];
+    e.target.style.color = newColor;
+};
 
 })
-
-
