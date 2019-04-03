@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 
     let header = document.createElement('header-container');
 
@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let hOneText = document.createTextNode("This is an h1");
     h1.className = 'h1';
 
-    
+
     h1.appendChild(hOneText);
     document.body.appendChild(h1);
     document.body.appendChild(header);
@@ -45,8 +45,8 @@ document.addEventListener("DOMContentLoaded", function() {
     h6.className = 'h6';
 
     h6.appendChild(hSixText);
-    document.body.appendChild(h6); 
-    
+    document.body.appendChild(h6);
+
 
     h1.addEventListener('dblclick', changeColor);
     h2.addEventListener('dblclick', changeColor);
@@ -63,25 +63,31 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let button = document.querySelector('button');
     document.body.appendChild(button);
-    button.className = 'button';
 
     button.addEventListener('click', insertItem);
 
+    let list = document.createElement('ul');
+    document.body.appendChild(list);
+
+    let clickCount = 1;
+
     function insertItem() {
-        console.log('worked');
-        let list = document.createElement('ul');
         let item = document.createElement('li');
-        let text = document.createTextNode('This is list item ' + [i]);
-        
+        let text = document.createTextNode('This is list item ' + clickCount++);
         item.appendChild(text);
         list.appendChild(item);
-        document.body.appendChild(list);
-    
-        for (var i = 1; i <= 6; ++i) {
-            item[i].innerHTML = ('This is list item ' + [i]);
-        //    document.querySelector('item')[i].innerText = 'This is list item ' + [i];
-        } 
+        item.addEventListener('click', changeColor);
+
+        function changeColor(e) {
+            let colors = ['blue', 'teal', 'turquoise', 'light green', 'lime', 'yellow', 'orange', 'sea foam'];
+            let newColor = colors[Math.floor(Math.random() * colors.length)];
+            e.target.style.color = newColor;
+        };
     }
+    item.addEventListener('dblclick', removeItem);
 
 
+    function removeItem() {
+        item.
+    }
 })
