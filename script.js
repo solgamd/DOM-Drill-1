@@ -83,11 +83,9 @@ document.addEventListener("DOMContentLoaded", function () {
             let newColor = colors[Math.floor(Math.random() * colors.length)];
             e.target.style.color = newColor;
         };
-    }
-    item.addEventListener('dblclick', removeItem);
 
-
-    function removeItem() {
-        item.
+        item.addEventListener('dblclick', function() {
+            list.removeChild(item);
+        });
     }
 })
